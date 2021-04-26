@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container py-5" id="custom-cards">
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h6 class="border-bottom pb-2 mb-0">Карточка игрока
+                @{{ player.nick_name }} {{ player.name }} {{ player.last_name }}</h6>
+
+            {% for visit in visits %}
+                <div class="d-flex text-muted pt-3">
+                    <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="{% static 'media/materinskaja-plata.png' %}" width="32"
+                         height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                         preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+                    <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-gray-dark">Дата: {{ visit.date|date:"d.m.Y h:i" }}</strong>
+                        </div>
+
+
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-gray-dark">Оплаченое время: {{ visit.time }}</strong>
+                        </div>
+
+
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-gray-dark">Номер компьютера: {{ visit.computers.number }}</strong>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

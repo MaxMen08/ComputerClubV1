@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5" id="custom-cards" style="background-color: white">
+    <h2 class="pb-2 border-bottom">Вот это мощь!</h2>
+    <h2 class="pb-2 border-bottom">Стол номер {{ computers.number }}</h2>
+
+    <div class="row row-cols-3 align-items-stretch py-5">
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                 style="background-image: url('../static/media/Nvidia-GeForce-RTX-3090-Founders-Edition-1-scaled.jpg');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">RTX 3090</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                 style="background-image: url('../static/media/amd.jpg');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ryzen 7</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                 style="background-image: url('../static/media/samsung.jpg');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Samsung EVO Plus 970</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0">Комплектующие</h6>
+        <div class="d-flex text-muted pt-3">
+            <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="../static/media/materinskaja-plata.png" width="32"
+                 height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                 preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Материнская плата</strong>
+                </div>
+                <span class="d-block">ASRock X570 Phantom Gaming-ITX/TB3</span>
+            </div>
+        </div>
+        <div class="d-flex text-muted pt-3">
+            <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="../static/media/materinskaja-plata.png" width="32"
+                 height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                 preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Видеокарта</strong>
+                </div>
+                <span class="d-block">RTX 3090</span>
+            </div>
+        </div>
+        <div class="d-flex text-muted pt-3">
+            <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="../static/media/materinskaja-plata.png" width="32"
+                 height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                 preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Процессор</strong>
+                </div>
+                <span class="d-block">AMD Ryzen 7 3800X</span>
+            </div>
+        </div>
+        <div class="d-flex text-muted pt-3">
+            <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="../static/media/materinskaja-plata.png" width="32"
+                 height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                 preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Накопитель</strong>
+                </div>
+                <span class="d-block">Samsung EVO Plus 970</span>
+            </div>
+        </div>
+        <div class="d-flex text-muted pt-3">
+            <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="../static/media/materinskaja-plata.png" width="32"
+                 height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+                 preserveAspectRatio="xMidYMid slice" focusable="false">
+
+
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Оперативная память</strong>
+                </div>
+                <span class="d-block">Kingston HyperX FURY Black 128 gb</span>
+            </div>
+        </div>
+
+
+        <small class="d-block text-start mt-3">
+            <span class="d-block">Список посещений</span>
+        </small>
+        {% for visit in visits %}
+        <div class="d-flex text-muted pt-3">
+
+            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">{{ visit.player }}</strong>
+                </div>
+                <span class="d-block">{{ visit.date|date:"d.m.Y h:i"  }}</span>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% for comp in computers %}
+        <a href="{% url 'comp_detail' comp.pk %}"><div>
+            <p>Номер {{ comp.number }}</p>
+            <p>Характеристика {{ comp.characteristics }}</p>
+            <p>Зал {{ comp.hall }}</p>
+
+            <br>
+            <br>
+        </div></a>
+
+
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="album py-5 bg-white">
+        <div class="cont">
+            <div class="container">
+                <div class="row">
+
+                    {% for comp in computers %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <img class="bd-placeholder-img card-img-top" height="225" src="static/media/comp.jpg">
+                                <div class="card-body">
+                                    <p class="card-text">Номер стола {{ comp.number }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+
+                                            <a type="button" href="{% url 'comp_detail' comp.pk %}" class="btn btn-sm btn-outline-secondary">Перейти</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
